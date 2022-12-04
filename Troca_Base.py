@@ -24,9 +24,9 @@ def SALVAR_SENHA():
     senha_adm= "\033[1m"+Label_senha.get()+"\033[0m"
     #SOMENTE PARA VER SE TA SALVANDO 
     print(Label_senha.get())
-    #1.1.2- DESABILITA O LABEL DE SENHA ***(não esta pronto!)
-    Label_senha.configure(state=DISABLED,background="orange red")
-    
+    #1.1.2- DESABILITA O LABEL DE SENHA EO BOTÃO ***(não esta pronto!)
+    Label_senha.configure(state=DISABLED)
+    salva_senha.configure(state=DISABLED)    
 
 #1.2 - PARAR/INICIAR O GUARD
 def PARAR_GUARD():
@@ -170,11 +170,14 @@ def REVERTER():
         senha = ''
         texto_status["text"] = status
         texto_senha["text"] = senha
-
+        
         #1.6.8- HABILITANDO O BOTÃO TROCA E DESABILITANDO O BOTÃO REVERTER
-        TROCA_button.configure(state='normal')
-        REVERTE_button.configure(state='disable')
-                
+        TROCA_button.configure(state=NORMAL)
+        REVERTE_button.configure(state=DISABLED)
+        Label_senha.configure(state=NORMAL)
+        salva_senha.configure(state=NORMAL)
+
+                   
 #1.7- CRIAÇAO DA FUNÇÃO DELETE_VERSAO
 def DELETE_VERSAO():
     #1.7.1- CONDICIONAL QUE ARMAZENA O CAMINHO DA BASE NA VARIAVEL modulo
